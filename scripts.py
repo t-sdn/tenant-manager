@@ -1,5 +1,6 @@
 import subprocess
 
+
 def run_script(script):
     p = subprocess.Popen(
         ['sh'],
@@ -38,7 +39,8 @@ def make_tenant(name, ip, vni, interface):
         'sudo /sbin/ip link add veth0 type veth peer name veth0_$name ',
         'sudo /sbin/ip link set veth0 netns $name',
         'sudo /sbin/ip netns exec $name ip link set dev veth0 up',
-        'sudo /sbin/ip netns exec $name ifconfig veth0 $ip netmask 255.255.255.0 up',
+        'sudo /sbin/ip netns exec $name ifconfig veth0 $ip '
+        'netmask 255.255.255.0 up',
         'sudo /sbin/ip link set dev veth0_$name up',
         '#',
         '# Binding VNI $vni to br_$name',
