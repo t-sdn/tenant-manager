@@ -17,7 +17,9 @@
     {% block header %}
     <nav class="navbar navbar-default navbar-static-top">
       <div class="container">
-        <span class="navbar-brand">Tenant manager</span>
+        <a href="{{ url_for('index') }}">
+          <span class="navbar-brand">Tenant manager</span>
+        </a>
       </div>
     </nav>
     {% endblock %}
