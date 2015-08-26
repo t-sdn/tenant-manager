@@ -1,0 +1,10 @@
+{% extends 'template.html' %}
+
+{% block title %}Error{% endblock %}
+
+{% block container %}
+<h2>Stdout</h2>
+<pre>{{ stdout|e }}</pre>
+<h2>Stderr</h2>
+<pre>{{ stderr|e }}</pre>
+{% endblock %}

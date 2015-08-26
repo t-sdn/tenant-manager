@@ -1,0 +1,21 @@
+{% extends 'template.html' %}
+
+{% block title %}Index{% endblock %}
+
+{% block container %}
+<form action="{{ url_for('create_tenant') }}" method="post">
+  <div class="form-group">
+    <label for="name">Tenant name</label>
+    <input name="name" class="form-control" placeholder="tenant name">
+  </div>
+  <div class="form-group">
+    <label for="ip">IP address for tenant</label>
+    <input name="ip" class="form-control" placeholder="ip">
+  </div>
+  <div class="form-group">
+    <label for="vni">VNI</label>
+    <input name="vni" class="form-control" type="number" placeholder="VNI">
+  </div>
+  <button type="submit" class="btn btn-default">OK</button>
+</form>
+{% endblock %}
